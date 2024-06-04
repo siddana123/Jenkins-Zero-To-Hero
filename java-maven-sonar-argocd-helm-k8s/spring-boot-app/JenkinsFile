@@ -29,11 +29,7 @@ pipeline {
         }
       }
     }
-      stage('TRIVY FS SCAN') {
-            steps {
-                sh "trivy fs . > trivyfs.txt"
-            }
-        }
+     
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "siddu654321/ultimate-cicd:${BUILD_NUMBER}"
